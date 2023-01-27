@@ -16,4 +16,5 @@ def convert():
     to_currency = request.form['to_currency']
     c = CurrencyRates()
     converted_amount = c.convert(from_currency, to_currency, value)
-    return f'{value} {from_currency} is equal to {converted_amount} {to_currency}'
+    #return f'{value} {from_currency} is equal to {converted_amount} {to_currency}'
+    return render_template('result.html', value=value, from_currency=from_currency, to_currency=to_currency, converted_amount=converted_amount)
